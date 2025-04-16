@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">25.1-am_lessons</string>
+    <string name="app_name">25.1 AM Lessons</string>
+    <string name="welcome_message">Hola mundo!</string>
+    <string name="button_text">Cambiar mensaje</string>
 </resources>

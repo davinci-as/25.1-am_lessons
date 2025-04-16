@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="21dp"
-            android:text="Hola mundo!" />
+            android:text="@string/welcome_message" />
 
         <Button
             android:id="@+id/button"
@@ -29,7 +29,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
-            android:text="Cambiar mensaje" />
+            android:text="@string/button_text" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
