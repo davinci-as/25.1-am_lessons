@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         //Log.i("test-message", "Actualizando campo de texto");
         //R.id.welcome_message
         TextView welcome_message = findViewById(R.id.welcome_message);
-        welcome_message.setText("New Message");
+        welcome_message.setText(R.string.new_message);
     }
 }
