@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
                 welcome_message.setText("Otro mensaje");
                 Button new_button = (Button) v;
                 new_button.setText("Mensaje Actualizado");
+                Toast messageToast = Toast.makeText(getApplicationContext(), "Segundo botón clickeado", Toast.LENGTH_LONG);
+                messageToast.show();
             }
         });
     }
@@ -31,5 +34,8 @@ public class MainActivity extends AppCompatActivity {
         //R.id.welcome_message
         TextView welcome_message = findViewById(R.id.welcome_message);
         welcome_message.setText(R.string.new_message);
+        Toast messageToast = Toast.makeText(this, "Primer botón clickeado", Toast.LENGTH_LONG);
+        messageToast.show();
+
     }
 }
