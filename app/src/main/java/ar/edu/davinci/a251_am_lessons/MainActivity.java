@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +16,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button new_button = findViewById(R.id.new_button);
+
+        Button new_button = new Button(this);
+        new_button.setText(R.string.new_message);
+        new_button.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+        new_button.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        LinearLayout card = (LinearLayout) findViewById(+R.id.card);
+        card.addView(new_button);
+
         new_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
