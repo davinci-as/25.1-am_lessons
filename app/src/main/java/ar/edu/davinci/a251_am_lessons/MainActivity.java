@@ -2,6 +2,7 @@ package ar.edu.davinci.a251_am_lessons;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,5 +50,10 @@ public class MainActivity extends AppCompatActivity {
         Toast messageToast = Toast.makeText(this, "Primer botón clickeado", Toast.LENGTH_LONG);
         messageToast.show();
 
+    }
+
+    public void openActivity(View view) {
+        Intent intent = new Intent(this, ListViewerActivity.class);
+        startActivity(intent);
     }
 }
