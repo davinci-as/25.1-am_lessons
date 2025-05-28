@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity(View view) {
+        EditText message = findViewById(R.id.message);
+        String messageText = String.valueOf(message.getText());
         Intent intent = new Intent(this, ListViewerActivity.class);
-        startActivity(intent);
+        intent.putExtra("messageText", messageText);
+        startActivityForResult(intent, RESULT_OK);
     }
 }
