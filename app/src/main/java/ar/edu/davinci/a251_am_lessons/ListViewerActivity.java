@@ -47,5 +47,8 @@ public class ListViewerActivity extends AppCompatActivity {
                 messageToast.show();
             }
         });
+
+        //Descargar imagen para actualizar en la UI
+        (new ImageDownloader()).execute("https://www.liderdelemprendimiento.com/wp-content/uploads/2023/06/Que-son-las-inversiones.png");
     }
 }
