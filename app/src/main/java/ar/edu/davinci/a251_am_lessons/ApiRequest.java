@@ -3,7 +3,12 @@ package ar.edu.davinci.a251_am_lessons;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -34,7 +39,23 @@ public class ApiRequest extends AsyncTask<String, Number, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        Log.i("api-request", s);
+        try {
+
+            JSONObject volumes = new JSONObject(s);
+            JSONArray items = (JSONArray) volumes.get("items");
+            int cantidadItems = items.length();
+            ArrayList<String> titles = new ArrayList<>();
+            for (int i = 0; i < cantidadItems; i++) {
+                JSONObject primerElememto = (JSONObject) items.get(i);
+                JSONObject volumeInfo = (JSONObject) primerElememto.get("volumeInfo");
+                String title = (String) volumeInfo.get("title");
+                titles.add(title);
+            }
+            Log.i("api-request", String.valueOf(titles));
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
         super.onPostExecute(s);
     }
 }
