@@ -50,5 +50,7 @@ public class ListViewerActivity extends AppCompatActivity {
 
         //Descargar imagen para actualizar en la UI
         (new ImageDownloader()).execute("https://www.liderdelemprendimiento.com/wp-content/uploads/2023/06/Que-son-las-inversiones.png");
+
+        (new ApiRequest()).execute("https://www.googleapis.com/books/v1/volumes?q=pride+prejudice&maxResults=5&printType=books");
     }
 }
